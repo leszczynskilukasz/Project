@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './index.css';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -42,7 +42,7 @@ const CustomDrawer = ({ toggleDrawer, showDrawer }) => {
       <h1>Zakładka</h1>
       <Divider />
       <List>
-        <h2>World News</h2>
+        <h2>Świat</h2>
         {worldNewsBookmarks.map(({ title, id, section, url }, index) => (
           <ListItem key={index}>
             <ListItemText primary={title} />
