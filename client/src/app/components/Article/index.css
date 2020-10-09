@@ -1,0 +1,36 @@
+.Container {
+  width: 100%;
+  min-height: 15vh;
+  background-color: rgb(145, 174, 253);
+  border-radius: 20px;
+  align-items: center;
+}
+
+.Article {
+  padding: 5px;
+  margin: 2%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.Article-Date {
+  font-size: 12px;
+}
+
+.Article-Title {
+  font-weight: bold;
+}
+
+.Save {
+  min-width: 10%;
+  min-height: 5%;
+}
+
+.Read {
+  min-width: 10%;
+  min-height: 5%;
+  padding-left: 20;
+}

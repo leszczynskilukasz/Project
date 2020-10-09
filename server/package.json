@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Apollo Server",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest",
     "start": "nodemon src/index.js"
@@ -12,6 +12,7 @@
   "dependencies": {
     "apollo-datasource-rest": "^0.9.4",
     "apollo-server": "^2.18.2",
+    "dotenv": "^8.2.0",
     "graphql": "^15.3.0",
     "nodemon": "^2.0.4"
   },

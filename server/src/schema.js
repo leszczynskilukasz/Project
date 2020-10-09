@@ -2,15 +2,20 @@ const { gql } = require('apollo-server');
 
 const typeDefs = gql`
 """
-TEMPLATE
+Article Object
 """
-type TemplateType {
+type Article {
   id: ID!
-  name: String!
+  section: String!
+  title: String!
+  publicationDate: String!
+  url: String!
 }
-
+"""
+Get Articles Query
+"""
 type Query {
-  launch(id: ID!): TemplateType
+  articles(section: String!, page: Int!): [Article]!
 }
 `;
 

@@ -2,16 +2,16 @@ import { combineReducers, createStore } from 'redux'
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import counterReducer from '../../features/counter/counterSlice';
+import bookmarkReducer from './Bookmarks/reducer';
 
 const rootReducer = combineReducers({
-  counter: counterReducer,
+  bookmark: bookmarkReducer,
 })
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['counter']
+  whitelist: ['bookmark']
 }
  
 const persistedReducer = persistReducer(persistConfig, rootReducer);

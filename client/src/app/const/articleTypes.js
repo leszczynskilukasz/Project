@@ -1,0 +1,6 @@
+export default {
+  WORLD_NEWS: 'WORLD NEWS',
+  SPORT: 'SPORT',
+  POLITICS: 'POLITICS',
+  BUSINESS: 'BUSINESS'
+};

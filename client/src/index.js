@@ -8,17 +8,18 @@ import * as serviceWorker from './serviceWorker';
 import { PersistGate } from 'redux-persist/integration/react'
 import { store, persistor } from './app/redux/store';
 import client from './apollo-client/index';
+import { ToastProvider } from 'react-toast-notifications';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ApolloProvider client={client}>
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <App />
-        </PersistGate>
-      </Provider>
-    </ApolloProvider>
-  </React.StrictMode>,
+  <ToastProvider>
+      <ApolloProvider client={client}>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <App />
+          </PersistGate>
+        </Provider>
+      </ApolloProvider>
+  </ToastProvider>,
   document.getElementById('root')
 );
 

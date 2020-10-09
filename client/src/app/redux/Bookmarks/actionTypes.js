@@ -1,0 +1,1 @@
+export const SAVE_BOOKMARK = 'SAVE_BOOKMARK';
