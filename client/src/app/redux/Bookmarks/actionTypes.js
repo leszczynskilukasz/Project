@@ -1,1 +1,2 @@
 export const SAVE_BOOKMARK = 'SAVE_BOOKMARK';
+export const DELETE_BOOKMARK = 'DELETE_BOOKMARK';
