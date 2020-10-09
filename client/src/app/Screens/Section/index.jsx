@@ -8,9 +8,9 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { GET_ARTICLES } from '../../../apollo-client/queries';
 import Article from '../../components/Article/index';
 
-const Sport = () => {
+const Politics = ({ section }) => {
   const [page, setPage] = useState(1);
-  const { data, loading } = useQuery(GET_ARTICLES, { variables: { section: 'sport', page: page }, notifyOnNetworkStatusChange: true });
+  const { data, loading } = useQuery(GET_ARTICLES, { variables: { section: section, page: page }, notifyOnNetworkStatusChange: true });
 
   if (loading) {
     return (
@@ -37,4 +37,4 @@ const Sport = () => {
   );
 }
 
-export default Sport;
+export default Politics;

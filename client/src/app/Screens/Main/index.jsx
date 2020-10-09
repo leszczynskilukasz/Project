@@ -7,10 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Drawer from '../../components/Drawer/index';
 
-import WorldNews from '../WorldNews/index';
-import Sport from '../Sport/index';
-import Politics from '../Politics/index';
-import Business from '../Business/index';
+import Section from '../Section/index';
 
 
 const buttonStyles = {
@@ -43,10 +40,10 @@ const News = () => {
           <Button style={buttonStyles}  disabled={article === articleTypes.SPORT} onClick={() => setArticle(articleTypes.SPORT)}>SPORT</Button>
           <Button style={buttonStyles}  disabled={article === articleTypes.POLITICS} onClick={() => setArticle(articleTypes.POLITICS)}>POLITYKA</Button>
           <Button style={buttonStyles} disabled={article === articleTypes.BUSINESS} onClick={() => setArticle(articleTypes.BUSINESS)}>BIZNES</Button>
-          {article === articleTypes.WORLD_NEWS && <WorldNews />}
-          {article === articleTypes.SPORT && <Sport />}
-          {article === articleTypes.POLITICS && <Politics />}
-          {article === articleTypes.BUSINESS && <Business />}
+          {article === articleTypes.WORLD_NEWS && <Section section="world" />}
+          {article === articleTypes.SPORT && <Section section="sport" />}
+          {article === articleTypes.POLITICS && <Section section="politics" />}
+          {article === articleTypes.BUSINESS && <Section section="business" />}
         </Typography>
       </Container>
     </div>

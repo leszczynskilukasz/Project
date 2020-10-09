@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
+import SectionList from './Components/SectionList/index';
 
 const useStyles = makeStyles({
   list: {
@@ -25,7 +26,7 @@ const useStyles = makeStyles({
 const CustomDrawer = ({ toggleDrawer, showDrawer }) => {
   const classes = useStyles();
 
-  const dispatch = useDispatch(); 
+  const dispatch = useDispatch();
 
   const worldNewsBookmarks = useSelector((state) => state.bookmark.bookmarkWorldNews);
   const sportBookmarks = useSelector((state) => state.bookmark.bookmarkSport);
@@ -44,81 +45,13 @@ const CustomDrawer = ({ toggleDrawer, showDrawer }) => {
     >
       <h1>Zakładka</h1>
       <Divider />
-      <List>
-        <h2>Świat</h2>
-        {worldNewsBookmarks.map(({ title, id, section, url }, index) => (
-          <ListItem key={index}>
-            <ListItemText primary={title} />
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="contained" color="primary">
-                CZYTAJ
-            </Button>
-            </a>
-            <Button style={{ marginLeft: 10 }} variant="contained" color="secondary" onClick={() => dispatch(deleteBookmark({ id, section }))}>Usuń</Button>
-          </ListItem>
-        ))}
-      </List>
+      <SectionList sectionName="Świat" bookmarks={worldNewsBookmarks} />
       <Divider />
-      <List>
-        <h2>Sport</h2>
-        {sportBookmarks.map(({ title, id, section, url }, index) => (
-          <ListItem key={index}>
-            <ListItemText primary={title} />
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="contained" color="primary">
-                CZYTAJ
-              </Button>
-            </a>
-            <Button style={{ marginLeft: 10 }} variant="contained" color="secondary" onClick={() => dispatch(deleteBookmark({ id, section }))}>Usuń</Button>
-          </ListItem>
-        ))}
-      </List>
+      <SectionList sectionName="Sport" bookmarks={sportBookmarks} />
       <Divider />
-      <List>
-        <h2>Polityka</h2>
-        {politicsBookmarks.map(({ title, id, section, url }, index) => (
-          <ListItem key={index}>
-            <ListItemText primary={title} />
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="contained" color="primary">
-                CZYTAJ
-            </Button>
-            </a>
-            <Button style={{ marginLeft: 10 }} variant="contained" color="secondary" onClick={() => dispatch(deleteBookmark({ id, section }))}>Usuń</Button>
-          </ListItem>
-        ))}
-      </List>
+      <SectionList sectionName="Polityka" bookmarks={politicsBookmarks} />
       <Divider />
-      <List>
-        <h2>Biznes</h2>
-        {businessBookmarks.map(({ title, id, section, url }, index) => (
-          <ListItem key={index}>
-            <ListItemText primary={title} />
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="contained" color="primary">
-                CZYTAJ
-             </Button>
-            </a>
-            <Button style={{ marginLeft: 10 }} variant="contained" color="secondary" onClick={() => dispatch(deleteBookmark({ id, section }))}>Usuń</Button>
-          </ListItem>
-        ))}
-      </List>
+      <SectionList sectionName="Biznes" bookmarks={businessBookmarks} />
     </div>
   );
 
