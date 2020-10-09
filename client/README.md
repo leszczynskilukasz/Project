@@ -1,9 +1,11 @@
 ## Run Project
 
-In the project directory server, you can run:
+1. In the project directory server, you can run:
 
 ### `npm server`
 Open [http://localhost:4000](http://localhost:4000) to test it in the browser.
+
+2. In the project directory client, you can run:
 
 ### `npm start`
 Runs the app in the development mode.<br />
